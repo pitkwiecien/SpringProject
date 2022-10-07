@@ -1,6 +1,6 @@
 package com.pitkwiecien.SpringProject.controllers;
 
-import com.pitkwiecien.SpringProject.models.UserDto;
+import com.pitkwiecien.SpringProject.models.UserDTO;
 import com.pitkwiecien.SpringProject.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +24,7 @@ public class UserController {
     }
 
     @GetMapping("/api/users")
-    public List<UserDto> showUsers(){
+    public List<UserDTO> showUsers(){
         return userRepository.getUsers();
     }
 }

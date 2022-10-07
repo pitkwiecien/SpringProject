@@ -1,6 +1,6 @@
 package com.pitkwiecien.SpringProject.repositories;
 
-import com.pitkwiecien.SpringProject.models.ProductDto;
+import com.pitkwiecien.SpringProject.models.ProductDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,7 +13,7 @@ public class ProductRepository {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    public List<ProductDto> getProducts(){
-        return jdbcTemplate.query("SELECT * FROM product", BeanPropertyRowMapper.newInstance(ProductDto.class));
+    public List<ProductDTO> getProducts(){
+        return jdbcTemplate.query("SELECT * FROM product", BeanPropertyRowMapper.newInstance(ProductDTO.class));
     }
 }
