@@ -43,4 +43,16 @@ public class UserRepository {
     public int deleteUser(int id) {
         return jdbcTemplate.update("DELETE FROM user WHERE user.id=?;", id);
     }
+
+    public int putUser(UserDTO newUser) {
+        return jdbcTemplate.update(
+                "UPDATE user SET name=?, surname=?, email=?, role=?, password=? WHERE id =?;",
+                newUser.getName(),
+                newUser.getSurname(),
+                newUser.getEmail(),
+                newUser.getRole(),
+                newUser.getPassword(),
+                newUser.getId()
+        );
+    }
 }
